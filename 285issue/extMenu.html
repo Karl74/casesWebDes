@@ -4,7 +4,9 @@
 	<title>Extended Menu</title>
 	<style type="text/css">
 		
-		nav.extend>*:first-child{
+		nav.extend>:first-child{
+			/**/
+
 			display: inline-block;
 			cursor: pointer;
 			user-select: none;
@@ -22,20 +24,41 @@
 			color:#777;
 		}
 
-
-		nav.extend.open > *:first-child{
+		nav.open >:first-child{
 			transform: rotate(45deg);
 		}
 
-		nav.extend.open>a{
+		nav.open>a{
 			display: inline-block;
-			animation: open 1s forwards;
+			animation: open .4s forwards ;
 		}
 
 		@keyframes open{
 			0%{left: -2em; opacity: 0;}
 			100%{left:0; opacity:1;}
 		}
+
+		/*four categories:
+				<:first-child
+				>a
+				.open >:firstchild;
+				.open >a
+			
+			<:first-child
+				in line block, pointer user-select none!!!!! transition/transform rotate;
+
+			>a 
+				no display, relative, no text decoratio, opacity 0;
+
+			.open>:first child
+				transform rotate
+
+			>a .open 
+				inline-block animation forwards
+
+		*/
+
+
 
 	</style>
 </head>
@@ -67,6 +90,9 @@
 					});	
 			}
 		});
+
+			//first loop adds animation delay????
+			//second loop toggle the class with the method .classList.toggle 
 
 	</script>
 
