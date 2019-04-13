@@ -9,18 +9,85 @@
 			margin:auto;
 			display: grid;
 			height: 100vh;
-			width: 185vh;
+			width: 190vh;
 			grid-template-rows: 28vh 35vh 35vh;
 			grid-template-columns: 24vw 16vw 16vw 16vw 16vw;
+			grid-gap:10px;
 		}
 
 
+		#header{
+			background-color:#0000d0;
+			grid-row: 1;
+			grid-column: 1/3
+		}
+
+		#sidebar{
+			background-color:#00d000;
+			grid-row: 2/4;
+			grid-column: 1/2;
+		}
+
+		#compo1{
+			background-color:#f0d000;
+			grid-row: 2/3;
+			grid-column: 2/3;
+		}
+
+		#compo2{
+			background-color:#d06800;
+			grid-row: 3/4;
+			grid-column: 2/3;
+		}
+
+		#compo3{
+			background-color:#d00000;
+			grid-row: 1/2;
+			grid-column: 3/4;
+		}
+
+		#compo4{
+			background-color:#f000d0;
+			grid-row: 1/2;
+			grid-column: 4/5;
+		}
+
+		#compo5{
+			background-color:#ff9030;
+			grid-row: 1/2;
+			grid-column: 5/6;
+		}
+
+
+		#display{
+			background-color:#00f0f0;
+			grid-row: 2/4;
+			grid-column: 3/6;
+		}
 	</style>
 
 </head>
 <body>
 
-	<div class="app-layout"></div>
+	<div class="app-layout">
+		
+		<div id="header"></div>
+
+		<section id="sidebar"></section>
+
+		<div id="compo1"></div>
+		
+		<div id="compo2"></div>
+		
+		<div id="compo3"></div>
+		
+		<div id="compo4"></div>
+
+		<div id="compo5"></div>
+
+		<section id="display"></section>
+		
+	</div>
 
 </body>
 </html>
