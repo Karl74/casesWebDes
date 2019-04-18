@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kilter Text</title>
+
+	<style type="text/css">
+
+		.animate span{
+			display: block;
+			position: relative;
+			text-align:center;
+		}
+
+		.animate.backwards > span {
+			animation: animateBackwards 1s ease-in-out forwards;
+		}
+		
+
+		.animate.forwards > span {
+			animation: animateForwards 1s ease-in-out forwards;
+		} 
+
+		.animate.mixed > span:nth-child(even){
+			animation: animateBackwards 1s ease-in-out forwards;
+		}
+
+		.animate.mixed >span:nth-child(odd){
+			animation: animateForwards 1s ease-in-out forwards;
+		}
+
+		@keyframes animateForwards{
+			from {top:0; transform: rotate(0deg);}
+			to {top:.9em transform: rotate(-15deg);}
+		}
+
+		@keyframes animateBackwards{
+			from {top:0; transform: rotate(0deg);}
+			to {top: 1em; transform: rotate(25deg);}
+		}
+
+	</style>
+
+
+	<script>
+		window.addEventListener("load",()=>{
+			var delay = 2;
+			var nodes = document.querySelectorAll(".animate"); console.log(`test 1: ${nodes}`)
+
+			for (var i = 0; i < nodes.length; i++) {
+				var words = nodes[i].innerText.split(" "); console.log(`test 2" ${words}`)
+				nodes[i].innerHTML = "";
+				for (var i2 = 0; i2 < words.length; i2++) {
+					var item =document.createElement("span");
+					item.innerText = words[i2];
+					var calc = (delay+((nodes.length+i2)/3));
+					item.style.animationDelay =calc+"s";
+					nodes[i].appendChild(item);
+				}
+			}
+		})
+
+	</script>
+
+</head>
+<body>
+
+	<h1 class="animate backwards"> The Animated Title</h1>
+
+	<h1 class="animate forwars"> The Animated Title</h1>
+
+	<h1 class="animate mixed">The Animated Title</h1>
+
+	
+
+</body>
+</html>
